@@ -1,0 +1,2 @@
+# GitHooksScript-OCLint
+使用GitHook机制在提交代码时对代码进行一些初步的检查
