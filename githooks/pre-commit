@@ -17,10 +17,12 @@ msg_color_warning='\033[33m'
 msg_color_none='\033[0m'
 
 
-script_path=$(git rev-parse --show-toplevel)/.githooks/pre-commit-rules
+script_path=$(git rev-parse --show-toplevel)/githooks/pre-commit-rules
 
 #use shell
 sh $script_path/OBJC_ASSOCIATION_ASSIGN_checker.sh
+sh $script_path/image_name_checker.sh
+
 
 #use ruby
 ruby $script_path/image_name_checker.rb
