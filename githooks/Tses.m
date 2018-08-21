@@ -8,7 +8,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIImage *image = [UIImage imageNamed:@"abc123"];
+    UIImage *image = [UIImage imageNamed:@"abc1234"];
     
 }
 
