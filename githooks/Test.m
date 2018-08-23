@@ -9,7 +9,8 @@
     [super viewDidLoad];
     
     
-    abcde
+    abcdeff
+    [NSString stringWithFormat:@"%.1f",0.1]
     
 }
 
