@@ -10,7 +10,7 @@
     
     
     abcdeff
-    [NSString stringWithFormat:@"%.1f",0.11]
+    [NSString stringWithFormat:@"%.1f",0.111]
     
 }
 
