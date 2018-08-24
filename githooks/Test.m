@@ -10,7 +10,8 @@
     
     
     abcdeff
-    [NSString stringWithFormat:@"%.1f",0.1111]
+    [NSString stringWithFormat:@"%@",[[NSNumber numberWithDouble:0.1] ta_priceString]]
+    
     
 }
 
