@@ -12,16 +12,11 @@ msg_color_success='\033[32m'
 msg_color_warning='\033[33m'
 msg_color_none='\033[0m'
 
-echo "${msg_color_warning}Begin commit check ...${msg_color_none} \n"
-
-
 if git diff-index -p -M --cached HEAD --  '*.h' '*.m' | egrep "OBJC_ASSOCIATION_ASSIGN" >/dev/null 2>&1
 then
   git diff-index -p -M --cached HEAD -- egrep -E "OBJC_ASSOCIATION_ASSIGN" '*.h' '*.m'  >&2
   echo "${msg_color_error}❌禁止使用OBJC_ASSOCIATION_ASSIGN，请修改后提交${msg_color_none} \n"
   result=1
-else 
-  echo "${msg_color_success}OBJC_ASSOCIATION_ASSIGN check success${msg_color_none} \n"
 fi
 
 

@@ -25,7 +25,8 @@ sh $script_path/image_name_checker.sh
 
 
 #use ruby
-ruby $script_path/image_name_checker.rb
+ruby $script_path/number_format_checker.rb
+
 
 
 echo "${msg_color_success}commit check success ${msg_color_none} \n"
