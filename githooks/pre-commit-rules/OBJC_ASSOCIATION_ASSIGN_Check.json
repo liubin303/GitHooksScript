@@ -1,0 +1,14 @@
+{
+    "name": "OBJC_ASSOCIATION_ASSIGN_Check",
+    "description": "检查是否使用了OBJC_ASSOCIATION_ASSIGN",
+    "fileExtentions": [
+      ".h",
+      ".m"
+    ],
+    "patterns": [
+      "OBJC_ASSOCIATION_ASSIGN"
+    ],
+    "level": "error", 
+    "message": "禁止使用OBJC_ASSOCIATION_ASSIGN",
+    "author": "刘彬"
+  }

@@ -1,0 +1,15 @@
+{
+    "name": "numberFormatCheck",
+    "description": "检查nsnumber显示时是否格式化",
+    "fileExtentions": [
+      ".m"
+    ],
+    "patterns": [
+        "\[NSString stringWithFormat:@\".*%.[0-9]f.*\",(\s*)(.*)\]", 
+        "\[NSString stringWithFormat:@\".*%@.*\",(\s*)@\((.*)\)\]", 
+        "\[NSString stringWithFormat:@\".*%@.*\",(\s*)\[NSNumber (.*)\]\]"
+    ],
+    "level": "error", 
+    "message": "请使用TAFormat格式化方法做格式化处理",
+    "author": "刘彬"
+  }

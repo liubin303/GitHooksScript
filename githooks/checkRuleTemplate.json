@@ -1,0 +1,14 @@
+{
+    "name": "CheckRuleName",
+    "description": "xxx",
+    "fileExtentions": [
+      ".h",
+      ".m"
+    ],
+    "patterns": [
+      ".*"
+    ],
+    "level": "error", 
+    "message": "xxx",
+    "author": "刘彬"
+  }
