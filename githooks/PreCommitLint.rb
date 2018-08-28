@@ -40,7 +40,8 @@ ruleSpecFiles.each { |ruleFile|
             change_content = getChangeContentByPath(file_path)
             # 按正则匹配
             lintRule.patterns.each do |pattern|
-                if change_content.match(pattern)
+                if change_content.match('#{pattern}')
+                    puts "#{change_content}命中正则#{pattern}"
                     if "error".eql?(lintRule.level)
                         puts "❌检查到 #{file} 含有不符合 #{lintRule.name} 检查规范的内容：#{lintRule.message}"
                         exit 1
