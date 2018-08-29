@@ -33,25 +33,26 @@ ruleSpecFiles.each { |ruleFile|
     lintRule = CommitLintRule.new(rule_spec_json_content)
     # 获取改动的文件（会按规则里定义的文件扩展名过滤）
     changedFiles = getAllChangedFilesByExtensions(lintRule.fileExtentions)
-    if changedFiles.size > 0
-        changedFiles.each { |file| 
-            git_dir = `git rev-parse --show-toplevel`
-            file_path = "#{git_dir.strip}/#{file.split.last.strip}"
-            change_content = getChangeContentByPath(file_path)
-            # 按正则匹配
-            lintRule.patterns.each do |pattern|
-                if change_content.match('#{pattern}')
-                    puts "#{change_content}命中正则#{pattern}"
-                    if "error".eql?(lintRule.level)
-                        puts "❌检查到 #{file} 含有不符合 #{lintRule.name} 检查规范的内容：#{lintRule.message}"
-                        exit 1
-                    else
-                        puts "⚠️检查到 #{file} 含有不符合 #{lintRule.name} 检查规范的内容：#{lintRule.message}"
-                    end
+    changedFiles.each { |file| 
+        git_dir = `git rev-parse --show-toplevel`
+        file_path = "#{git_dir.strip}/#{file.split.last.strip}"
+        change_content = getChangeContentByPath(file_path)
+        # puts "#{file_path}修改：#{change_content}"
+        # 按正则匹配
+        lintRule.patterns.each do |pattern|
+            if change_content.match(pattern)
+                if "error".eql?(lintRule.level)
+                    
+                    puts "❌检查到 #{file} 含有不符合 #{lintRule.name} 检查规范 #{pattern} 的内容：#{change_content}"
+                    puts "❌#{lintRule.message}"
+                    exit 1
+                else
+                    puts "⚠️检查到 #{file} 含有不符合 #{lintRule.name} 检查规范 #{pattern} 的内容：#{change_content}"
+                    puts "⚠️#{lintRule.message}"
                 end
             end
-        }
-    end
+        end
+    }
 }
 
 

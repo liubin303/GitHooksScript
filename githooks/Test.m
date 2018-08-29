@@ -10,7 +10,7 @@
     
     
     abcdeff
-    [NSString stringWithFormat:@"%@",[NSNumber numberWithDouble:0.11]]
+    [NSString stringWithFormat:@"aaa%@bbb",[@(0.01) xxxprice]]
     
     
 }
