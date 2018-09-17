@@ -1,14 +1,16 @@
 {
     "name": "CheckRuleName",
-    "description": "xxx",
+    "description": "检查是否包含abc",
     "fileExtentions": [
       ".h",
       ".m"
     ],
     "patterns": [
-      ".*"
+      ".*a.*",
+      ".*b.*",
+      ".*c.*"
     ],
-    "level": "error", 
-    "message": "xxx",
+    "level": "error or warning", 
+    "message": "禁止使用abc,请修改后提交",
     "author": "刘彬"
   }

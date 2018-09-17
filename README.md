@@ -19,18 +19,36 @@ GitHooksScript使用GitHook机制在提交代码时对代码进行一些初步�
 
 ## GitHooksScript 
 
-### 基础能力
+### 能力
 
-1. 本地commit时对提交内容的检查能力。
-2. 检查规则可自由扩展，可以是shell、ruby或者Python脚本。
+1. 本地commit时对提交内容的检查能力，error会阻止提交，warning提交时会有提示。
+2. 检查规则可通过json匹配文件扩展，扩展方式友好、快捷。
 3. 检查规则团队同步，通过脚本一次性配置。
 
-### 检查规则
+### 配置检查规则
 
-| 规则名 | 描述 | 级别 |
-| --- | --- | --- |
-| ImageName检查 | 检查[UIImage imageNamed:]时是否使用的静态常量做为图片名 | error |
-| OBJC_ASSOCIATION_ASSIGN检查 | 检查是否有使用OBJC_ASSOCIATION_ASSIGN来做属性绑定的关键字 | error |
+1.拷贝checkRuleTemplate.json文件至pre-commit-rules文件夹并重新命名。
+2.配置详细的检查规则，配置文件内容如下，fileExtentions是需要检查的文件类型集合，patterns是需要检查的正则表达式集合，level是检查的级别。
+```
+{
+    "name": "CheckRuleName",
+    "description": "检查是否包含abc",
+    "fileExtentions": [
+      ".h",
+      ".m"
+    ],
+    "patterns": [
+      ".*a.*",
+      ".*b.*",
+      ".*c.*"
+    ],
+    "level": "error or warning", 
+    "message": "禁止使用abc,请修改后提交",
+    "author": "刘彬"
+  }
+````
+
+
 
 ### 如何使检查生效
 1. 将本工程的githooks文件夹拷贝到你的工程的根目录（别忘记提交到远端给团队内的其他同学使用）
