@@ -19,13 +19,19 @@ GitHooksScript使用GitHook机制在提交代码时对代码进行一些初步�
 
 ## GitHooksScript 
 
-### 能力
+### 基础能力
 
-1. 本地commit时对提交内容的检查能力，error会阻止提交，warning提交时会有提示。
+1. 本地commit时对提交内容的检查能力。
+2. 检查规则分级能力，error会阻止提交，warning提交时会有提示。
 2. 检查规则可通过json匹配文件扩展，扩展方式友好、快捷。
-3. 检查规则团队同步，通过脚本一次性配置。
+3. 检查规则团队同步，通过脚本自动配置。
 
-### 配置检查规则
+### 初始化
+1. 将本工程的githooks文件夹拷贝到你的工程的根目录（别忘记提交到远端给团队内的其他同学使用）
+2. 进入githooks文件夹，运行install.sh
+
+
+### 添加检查规则
 
 1.拷贝checkRuleTemplate.json文件至pre-commit-rules文件夹并重新命名。
 2.配置详细的检查规则，配置文件内容如下，fileExtentions是需要检查的文件类型集合，patterns是需要检查的正则表达式集合，level是检查的级别。
@@ -50,9 +56,7 @@ GitHooksScript使用GitHook机制在提交代码时对代码进行一些初步�
 
 
 
-### 如何使检查生效
-1. 将本工程的githooks文件夹拷贝到你的工程的根目录（别忘记提交到远端给团队内的其他同学使用）
-2. 进入githooks文件夹，运行install.sh
+
 
 
 
