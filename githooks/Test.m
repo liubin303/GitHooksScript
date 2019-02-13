@@ -8,8 +8,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    abcdeff
     [NSString stringWithFormat:@"aaa%@bbb",[@(0.01) xxxprice]]
     
     
