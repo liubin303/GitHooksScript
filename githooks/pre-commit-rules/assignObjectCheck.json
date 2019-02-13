@@ -1,0 +1,14 @@
+{
+    "name": "assignObjectCheck",
+    "description": "检查是否使用了assign修饰对象类型的属性",
+    "fileExtentions": [
+      ".h",
+      ".m"
+    ],
+    "patterns": [
+      "assign\\)(.*)(\\*)"
+    ],
+    "level": "error", 
+    "message": "禁止使用assign修饰对象类型的属性",
+    "author": "刘彬"
+  }
